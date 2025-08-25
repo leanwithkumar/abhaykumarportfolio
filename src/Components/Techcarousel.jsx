@@ -29,7 +29,6 @@ import {
 } from "react-icons/si";
 import { TbBrandCpp } from "react-icons/tb";
 
-// ✅ Expanded Tech stack with correct icons
 const techs = [
   { label: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
   { label: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
@@ -61,12 +60,13 @@ const techs = [
 function MarqueeRow({ reverse = false, speed = 50 }) {
   return (
     <div className="relative overflow-hidden">
-      {/* Fade edges */}
       <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0f0f0f] to-transparent z-20" />
       <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0f0f0f] to-transparent z-20" />
 
       <div
-        className={`animate-marquee ${reverse ? "reverse" : ""} flex gap-4 w-max py-1`}
+        className={`animate-marquee ${
+          reverse ? "reverse" : ""
+        } flex gap-4 w-max py-1`}
         style={{ animationDuration: `${speed}s` }}
       >
         {[...techs, ...techs].map((tech, i) => (

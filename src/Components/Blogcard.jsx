@@ -11,10 +11,8 @@ const BlogCard = ({ image, title, hashtags, description, date, link }) => {
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
-      {/* Hashtags */}
       <div className="absolute top-0 left-0 p-2 sm:p-4 flex gap-1 sm:gap-2 flex-wrap">
         {hashtags.map((tag, i) => (
           <span
@@ -26,14 +24,14 @@ const BlogCard = ({ image, title, hashtags, description, date, link }) => {
         ))}
       </div>
 
-      {/* Content */}
       <div className="absolute bottom-0 p-2 sm:p-4 text-white w-full">
         <h2 className="text-base sm:text-lg font-semibold">{title}</h2>
         <p className="text-gray-300 text-[10px] sm:text-xs">{date}</p>
-        <p className="text-gray-200 text-xs sm:text-sm mt-1 line-clamp-2 sm:line-clamp-3">{description}</p>
+        <p className="text-gray-200 text-xs sm:text-sm mt-1 line-clamp-2 sm:line-clamp-3">
+          {description}
+        </p>
       </div>
 
-      {/* Hover Overlay */}
       <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
         <Link
           to={link}

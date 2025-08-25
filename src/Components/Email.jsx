@@ -9,25 +9,19 @@ const public_key = import.meta.env.VITE_PUBLIC_KEY;
 const Email = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    toast.info('Sending Message', {
-position: "bottom-right",
-autoClose: 2000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: false,
-draggable: true,
-progress: undefined,
-theme: "light",
-
-});
+    toast.info("Sending Message", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
     try {
-      await emailjs.sendForm(
-        service_id,
-        template_id,
-        e.target,
-        public_key
-      );
+      await emailjs.sendForm(service_id, template_id, e.target, public_key);
       toast.success("message delivered sucessfully", {
         position: "bottom-right",
         autoClose: 5000,
@@ -41,17 +35,16 @@ theme: "light",
       e.target.reset();
     } catch (error) {
       console.log(error.text);
-      toast.error('message not delivered', {
-position: "bottom-right",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: false,
-draggable: true,
-progress: undefined,
-theme: "light",
-
-});
+      toast.error("message not delivered", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
@@ -85,7 +78,7 @@ theme: "light",
           placeholder="Message*"
           autoComplete="off"
           required
-          maxLength={500} // limit to 200 characters
+          maxLength={500}
           className="w-full h-60 resize-none p-3 bg-[#3B3B3B] text-white rounded-md focus:outline-none overflow-hidden"
         />
 
