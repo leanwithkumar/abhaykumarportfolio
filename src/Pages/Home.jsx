@@ -33,6 +33,15 @@ function Home() {
 
           <div className="w-full border-t border-white"></div>
 
+          <section className="py-8">
+            <h2 className="pb-4 text-2xl  text-white">
+              Tools That I Have Used
+            </h2>
+            <TechCarousel />
+          </section>
+
+          <div className="w-full border-t border-white"></div>
+
           <section className="pt-5">
             <h2 className="text-2xl  text-white">Latest Articles</h2>
 
@@ -57,15 +66,6 @@ function Home() {
                 height="h-100"
               />
             </div>
-          </section>
-
-          <div className="w-full border-t border-white"></div>
-
-          <section className="py-8">
-            <h2 className="pb-4 text-2xl  text-white">
-              Tools That I Have Used
-            </h2>
-            <TechCarousel />
           </section>
 
           <div className="w-full border-t border-white"></div>

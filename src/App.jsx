@@ -19,12 +19,24 @@ function App() {
         <div className="flex flex-col md:flex-row gap-4">
           <div className="hidden md:block w-[30%]">
             <div className="sticky top-5 h-[calc(100vh-40px)] overflow-hidden">
-              <Slider />
+              <Motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                <Slider />
+              </Motion.div>
             </div>
           </div>
 
           <div className="block md:hidden w-full mb-4">
-            <Headerslider />
+            <Motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <Headerslider />
+            </Motion.div>
           </div>
 
           <Motion.div
